@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-record-chatter"
+description = "Odoo-style chatter for any Django model: internal notes and a field change log, served over DRF."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["Django>=4.2", "djangorestframework>=3.14"]
+dynamic = ["version"]
+classifiers = ["Framework :: Django"]
+
+[tool.setuptools.dynamic]
+version = { attr = "chatter.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
